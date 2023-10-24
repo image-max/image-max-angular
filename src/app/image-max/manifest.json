@@ -1,0 +1,14 @@
+[
+    {
+      "src": "image1.jpg",
+      "size": "small"
+    },
+    {
+      "src": "image2.jpg",
+      "size": "medium"
+    },
+    {
+      "src": "image3.jpg",
+      "size": "large"
+    }
+  ]

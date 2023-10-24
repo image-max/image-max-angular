@@ -1,0 +1,44 @@
+# npm stuff
+node_modules
+**/node_modules
+npm-debug.log
+.npm
+.config
+.env
+
+# Serverless directories
+.serverless
+.angular
+.angular/*
+
+# mac
+.DS_Store
+
+# development residue
+.nyc_output
+reports
+logs
+dist
+build
+express
+reports-tmp
+settings.json
+metrics.json
+test-report.xml
+
+# builds
+archive.tar.gz
+build.tar.gz
+dist
+loopback-build
+angular-build
+
+# dev tools cruft
+.idea
+
+# dont save constants in projects
+**/constants.js
+**/constants.ts
+
+
+

@@ -1,0 +1,4 @@
+# CI robots.txt
+
+User-agent: *
+Disallow: /
