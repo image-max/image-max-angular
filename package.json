@@ -6,7 +6,7 @@
         "build": "npm run build:production",
         "production": "scully --project=angular --scanRoutes",
         "ng": "ng",
-        "start": "ng serve --configuration development --port 4444",
+        "start": "ng serve --configuration development --port 4555",
         "build:dev": "node --max-old-space-size=8192 ./node_modules/@angular/cli/bin/ng build --configuration development",
         "build:production": "node --max-old-space-size=8192 ./node_modules/@angular/cli/bin/ng build --configuration production",
         "build:sourcemap": "node --max-old-space-size=8192 ./node_modules/@angular/cli/bin/ng build --configuration source-map --source-map",
