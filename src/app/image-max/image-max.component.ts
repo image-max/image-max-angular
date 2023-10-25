@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, NgZone, OnInit, Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -13,8 +13,12 @@ export class ImageMaxComponent implements AfterViewInit, OnInit {
   @Input() manifest: any;
   @Input() cssStyles: { [key: string]: string };
   selectedImage: string;
-
-  constructor(private elementRef: ElementRef, private renderer: Renderer2, private http: HttpClient) { }
+  width = 500;
+  constructor(
+    private elementRef: ElementRef,
+    private renderer: Renderer2,
+    private http: HttpClient,
+    private zone: NgZone) { }
 
   ngAfterViewInit(): void {
     // throw new Error('Method not implemented.');
@@ -23,14 +27,20 @@ export class ImageMaxComponent implements AfterViewInit, OnInit {
   ngOnInit() {
     const componentSize = this.determineComponentSize();
     this.selectedImage = this.selectBestImage(componentSize);
+    const observer = new ResizeObserver(entries => {
+      this.zone.run(() => {
+        this.width = entries[0].contentRect.width;
+        console.log(this.width, "this.width=--==-")
+      });
+    });
 
+    observer.observe(this.elementRef.nativeElement);
     // Calculate missing dimensions and maintain aspect ratio
-    this.calculateAndApplyAspectRatio(componentSize);
+    // this.calculateAndApplyAspectRatio(componentSize);
   }
 
   private determineComponentSize(): { width?: number; height?: number } {
     const style = getComputedStyle(this.elementRef.nativeElement);
-
     // Check for manual settings using component inputs (e.g., width and height).
     const width = this.elementRef.nativeElement.style.width ? parseInt(this.elementRef.nativeElement.style.width) : undefined;
     const height = this.elementRef.nativeElement.style.height ? parseInt(this.elementRef.nativeElement.style.height) : undefined;
@@ -52,8 +62,8 @@ export class ImageMaxComponent implements AfterViewInit, OnInit {
     // If no manual settings, check for styles and CSS classes.
     if (style.width && style.height) {
       return {
-        width: parseInt(style.width),
-        height: parseInt(style.height)
+        width: 700,
+        height: 108
       };
     }
 
@@ -75,14 +85,13 @@ export class ImageMaxComponent implements AfterViewInit, OnInit {
       // Handle the case where there's no manifest or no images in the manifest.
       return ''; // Return an empty string or a default image URL.
     }
-console.log("outside retor")
     // Sort the images in the manifest by size in ascending order.
     const sortedImages = this.manifest.versions.sort((a, b) => a.width - b.width);
-
     for (const image of sortedImages) {
       if (size.width && image.width >= size.width) {
+        //console.log(image,"image-=-=-=-=");
         if (!image.downloaded) {
-          return image.url;
+          return `../../assets/${this.manifest.name}-${image.width}.${image.format}` // image.url;
         }
       }
     }
@@ -155,10 +164,12 @@ console.log("outside retor")
     return 16 / 9; // Default 16:9 aspect ratio
   }
 
-  onWindowResize(e) {
-    const componentSize = this.determineComponentSize();
-    this.selectedImage = this.selectBestImage(componentSize);
-    this.downloadAndDisplayImage(this.selectedImage);
-  }
+  // (window:resize)="onWindowResize($event)" 
+  // onWindowResize(e) {
+  //   console.log('height:', e.target.innerHeight,'width:', e.target.innerWidth)
+  //   const componentSize = this.determineComponentSize();
+  //   this.selectedImage = this.selectBestImage(componentSize);
+  //   this.downloadAndDisplayImage(this.selectedImage);
+  // }
 }
 
