@@ -1,1 +1,11 @@
-<p>image max works!</p>
+<div [ngClass]="{'background':!selectedImage}">
+    <img [src]="imageUrl" [ngStyle]="style" [ngClass]="class" [class]="ngClass">
+
+
+    <div *ngIf="debug">
+        <p>loaded image path:{{imageUrl}}</p>
+        <p>loaded image size:{{selectedImage?.sizeKB}}</p>
+        <p>loaded image file type:{{selectedImage?.format}}</p>
+        <p>loaded image aspect ratio:{{imageData?.aspectRatio}}</p>
+    </div>
+</div>
