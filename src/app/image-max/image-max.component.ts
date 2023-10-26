@@ -67,10 +67,10 @@ export class ImageMaxComponent implements OnInit {
     let width = element.clientWidth || Number(computedStyle.width);
     let height = element.clientHeight || Number(computedStyle.height);
     if (isNaN(width)) {
-      width = this.fileSizeWidth || 500
+      width = this.fileSizeWidth || window.innerWidth;
       height = width / this.imageData.aspectRatio
     } else if (isNaN(height)) {
-      height = this.fileSizeHeight || 300
+      height = this.fileSizeHeight || window.innerHeight;
       width = height * this.imageData.aspectRatio
     }
     this.imageSize = { width, height }
@@ -78,7 +78,7 @@ export class ImageMaxComponent implements OnInit {
 
   loadImage(): void {
     const sortedImagesVersion = this.imageData.versions.sort((firstImageVersion: imageVersion, secondImageVersion: imageVersion) =>
-      secondImageVersion.width - firstImageVersion.width
+      firstImageVersion.width - secondImageVersion.width
     )
     const selectedImage = sortedImagesVersion.find(imageVersion => {
       if (this.fileType) {
@@ -88,9 +88,8 @@ export class ImageMaxComponent implements OnInit {
         return imageVersion.width >= this.imageSize.width && imageVersion.height >= this.imageSize.height
       }
     })
-    this.selectedImage = selectedImage || sortedImagesVersion[0]
+    this.selectedImage = selectedImage || sortedImagesVersion[sortedImagesVersion.length - 1]
     this.imageUrl = `../assets/${this.file}-${this.selectedImage.width}.${this.selectedImage.format}`
   }
 
 }
-
