@@ -8,9 +8,8 @@ describe('ImageMaxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImageMaxComponent ]
-    })
-    .compileComponents();
+      declarations: [ImageMaxComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ImageMaxComponent);
     component = fixture.componentInstance;

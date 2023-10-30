@@ -1,95 +1,85 @@
-import { Component, ElementRef, Input, OnInit, HostListener, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, Renderer2, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ResizeObserver } from '@juggle/resize-observer';
 
 interface imageInfo {
-  name: string,
-  type: string,
-  aspectRatio: number,
-  averageColor: string,
-  versions: imageVersion[]
+  name: string;
+  type: string;
+  aspectRatio: number;
+  averageColor: string;
+  versions: imageVersion[];
 }
 interface imageVersion {
-  format: string,
-  sizeKB: number,
-  width: number,
-  height: number
+  format: string;
+  sizeKB: number;
+  width: number;
+  height: number;
 }
 @Component({
   selector: 'image-max',
   templateUrl: './image-max.component.html',
-  styleUrls: ['./image-max.component.scss']
+  styleUrls: ['./image-max.component.scss'],
 })
-export class ImageMaxComponent implements OnInit {
-
-  @Input() fileType: string
-  @Input() fileSizeWidth: string
-  @Input() fileSizeHeight: string
-  @Input() debug: boolean = false
+export class ImageMaxComponent implements AfterViewInit {
+  @Input() fileType: string;
+  @Input() fileSizeWidth: string;
+  @Input() fileSizeHeight: string;
+  @Input() debug: boolean = false;
   @Input() file: string;
   @Input() style: string;
   @Input() class: string;
   @Input() ngClass: string;
-  imageUrl: string
-  imageSize: { width: number, height: number }
-  imageData: imageInfo
-  resizeObserver: ResizeObserver
-  selectedImage: imageVersion
-  constructor(
-    private http: HttpClient,
-    private elementRef: ElementRef,
-    private renderer: Renderer2
-  ) {
-    this.resizeObserver = new ResizeObserver(this.onResizeObserver)
+
+  @ViewChild('img', { static: false }) img: ElementRef;
+
+  imageUrl: string;
+  imageData: imageInfo;
+  resizeObserver: ResizeObserver;
+  selectedImage: imageVersion;
+  constructor(private http: HttpClient, private renderer: Renderer2) {
+    this.resizeObserver = new ResizeObserver(this.onResizeObserver);
   }
 
-  ngOnInit(): void {
-    this.getImageData()
-    this.resizeObserver.observe(this.elementRef.nativeElement)
+  ngAfterViewInit(): void {
+    this.getImageData();
+    this.resizeObserver.observe(this.img.nativeElement);
   }
 
   onResizeObserver = (entries: ResizeObserverEntry[], observer: ResizeObserver) => {
-    this.calculateInitialSize();
-    this.loadImage()
-  }
+    this.loadImage();
+  };
 
   getImageData(): void {
     this.http.get('../assets/' + this.file + '-manifest.json').subscribe((data: imageInfo) => {
-      this.imageData = data
-      this.calculateInitialSize()
-      this.loadImage()
-    })
+      this.imageData = data;
+      this.loadImage();
+    });
   }
 
-  calculateInitialSize(): void {
-    const element = this.elementRef.nativeElement;
-    const computedStyle = getComputedStyle(element);
-    let width = element.clientWidth || Number(computedStyle.width);
-    let height = element.clientHeight || Number(computedStyle.height);
-    if (isNaN(width)) {
-      width = this.fileSizeWidth || window.innerWidth;
-      height = width / this.imageData.aspectRatio
-    } else if (isNaN(height)) {
-      height = this.fileSizeHeight || window.innerHeight;
-      width = height * this.imageData.aspectRatio
-    }
-    this.imageSize = { width, height }
+  calculateInitialSize(): { width: number; height: number } {
+    const width = this.img.nativeElement.clientWidth || this.img.nativeElement.clientHeight * this.imageData.aspectRatio;
+    const height = this.img.nativeElement.clientHeight || this.img.nativeElement.clientWidth / this.imageData.aspectRatio;
+    return { width, height };
   }
 
   loadImage(): void {
-    const sortedImagesVersion = this.imageData.versions.sort((firstImageVersion: imageVersion, secondImageVersion: imageVersion) =>
-      firstImageVersion.width - secondImageVersion.width
-    )
-    const selectedImage = sortedImagesVersion.find(imageVersion => {
+    const imageSize = this.calculateInitialSize();
+    const sortedImagesVersion = this.imageData?.versions.sort((imageVersionA: imageVersion, imageVersionB: imageVersion) => imageVersionA.width - imageVersionB.width);
+    const selectedImage = sortedImagesVersion?.find((imageVersion) => {
       if (this.fileType) {
-        return imageVersion.width >= this.imageSize.width && imageVersion.height >= this.imageSize.height && imageVersion.format === this.fileType
+        return imageVersion.width >= imageSize.width && imageVersion.height >= imageSize.height && imageVersion.format === this.fileType;
+      } else {
+        return imageVersion.width >= imageSize.width && imageVersion.height >= imageSize.height;
       }
-      else {
-        return imageVersion.width >= this.imageSize.width && imageVersion.height >= this.imageSize.height
+    });
+    if (this.selectedImage && selectedImage) {
+      if (selectedImage.width > this.selectedImage.width || selectedImage.height > this.selectedImage.height) {
+        this.selectedImage = selectedImage;
+        this.imageUrl = `../assets/${this.file}-${this.selectedImage?.width}.${this.selectedImage?.format}`;
       }
-    })
-    this.selectedImage = selectedImage || sortedImagesVersion[sortedImagesVersion.length - 1]
-    this.imageUrl = `../assets/${this.file}-${this.selectedImage.width}.${this.selectedImage.format}`
+    } else if (selectedImage) {
+      this.selectedImage = selectedImage;
+      this.imageUrl = `../assets/${this.file}-${this.selectedImage?.width}.${this.selectedImage?.format}`;
+    }
   }
-
 }

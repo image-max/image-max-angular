@@ -1,224 +1,224 @@
 {
-    "name": "069t000000N0bn1AAB",
-    "type": "png",
-    "aspectRatio": 1.96084,
-    "averageColor": "c2aca8",
-    "versions": [
-        {
-            "format": "webp",
-            "sizeKB": 18,
-            "width": 700,
-            "height": 357
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 21,
-            "width": 700,
-            "height": 357
-        },
-        {
-            "format": "png",
-            "sizeKB": 90,
-            "width": 700,
-            "height": 357
-        },
-        {
-            "format": "webp",
-            "sizeKB": 16,
-            "width": 600,
-            "height": 306
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 19,
-            "width": 600,
-            "height": 306
-        },
-        {
-            "format": "png",
-            "sizeKB": 87,
-            "width": 600,
-            "height": 306
-        },
-        {
-            "format": "webp",
-            "sizeKB": 13,
-            "width": 500,
-            "height": 255
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 14,
-            "width": 500,
-            "height": 255
-        },
-        {
-            "format": "png",
-            "sizeKB": 62,
-            "width": 500,
-            "height": 255
-        },
-        {
-            "format": "webp",
-            "sizeKB": 10,
-            "width": 400,
-            "height": 204
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 11,
-            "width": 400,
-            "height": 204
-        },
-        {
-            "format": "png",
-            "sizeKB": 42,
-            "width": 400,
-            "height": 204
-        },
-        {
-            "format": "webp",
-            "sizeKB": 8,
-            "width": 350,
-            "height": 178
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 9,
-            "width": 350,
-            "height": 178
-        },
-        {
-            "format": "png",
-            "sizeKB": 33,
-            "width": 350,
-            "height": 178
-        },
-        {
-            "format": "webp",
-            "sizeKB": 7,
-            "width": 300,
-            "height": 153
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 7,
-            "width": 300,
-            "height": 153
-        },
-        {
-            "format": "png",
-            "sizeKB": 27,
-            "width": 300,
-            "height": 153
-        },
-        {
-            "format": "webp",
-            "sizeKB": 5,
-            "width": 250,
-            "height": 127
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 6,
-            "width": 250,
-            "height": 127
-        },
-        {
-            "format": "png",
-            "sizeKB": 20,
-            "width": 250,
-            "height": 127
-        },
-        {
-            "format": "webp",
-            "sizeKB": 4,
-            "width": 200,
-            "height": 102
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 4,
-            "width": 200,
-            "height": 102
-        },
-        {
-            "format": "png",
-            "sizeKB": 14,
-            "width": 200,
-            "height": 102
-        },
-        {
-            "format": "webp",
-            "sizeKB": 3,
-            "width": 150,
-            "height": 76
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 3,
-            "width": 150,
-            "height": 76
-        },
-        {
-            "format": "png",
-            "sizeKB": 9,
-            "width": 150,
-            "height": 76
-        },
-        {
-            "format": "webp",
-            "sizeKB": 2,
-            "width": 100,
-            "height": 51
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 2,
-            "width": 100,
-            "height": 51
-        },
-        {
-            "format": "png",
-            "sizeKB": 5,
-            "width": 100,
-            "height": 51
-        },
-        {
-            "format": "webp",
-            "sizeKB": 1,
-            "width": 50,
-            "height": 25
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 1,
-            "width": 50,
-            "height": 25
-        },
-        {
-            "format": "png",
-            "sizeKB": 3,
-            "width": 50,
-            "height": 25
-        },
-        {
-            "format": "webp",
-            "sizeKB": 1,
-            "width": 25,
-            "height": 13
-        },
-        {
-            "format": "jpg",
-            "sizeKB": 1,
-            "width": 25,
-            "height": 13
-        },
-        {
-            "format": "png",
-            "sizeKB": 2,
-            "width": 25,
-            "height": 13
-        }
-    ]
+  "name": "069t000000N0bn1AAB",
+  "type": "png",
+  "aspectRatio": 1.96084,
+  "averageColor": "c2aca8",
+  "versions": [
+    {
+      "format": "webp",
+      "sizeKB": 18,
+      "width": 700,
+      "height": 357
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 21,
+      "width": 700,
+      "height": 357
+    },
+    {
+      "format": "png",
+      "sizeKB": 90,
+      "width": 700,
+      "height": 357
+    },
+    {
+      "format": "webp",
+      "sizeKB": 16,
+      "width": 600,
+      "height": 306
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 19,
+      "width": 600,
+      "height": 306
+    },
+    {
+      "format": "png",
+      "sizeKB": 87,
+      "width": 600,
+      "height": 306
+    },
+    {
+      "format": "webp",
+      "sizeKB": 13,
+      "width": 500,
+      "height": 255
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 14,
+      "width": 500,
+      "height": 255
+    },
+    {
+      "format": "png",
+      "sizeKB": 62,
+      "width": 500,
+      "height": 255
+    },
+    {
+      "format": "webp",
+      "sizeKB": 10,
+      "width": 400,
+      "height": 204
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 11,
+      "width": 400,
+      "height": 204
+    },
+    {
+      "format": "png",
+      "sizeKB": 42,
+      "width": 400,
+      "height": 204
+    },
+    {
+      "format": "webp",
+      "sizeKB": 8,
+      "width": 350,
+      "height": 178
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 9,
+      "width": 350,
+      "height": 178
+    },
+    {
+      "format": "png",
+      "sizeKB": 33,
+      "width": 350,
+      "height": 178
+    },
+    {
+      "format": "webp",
+      "sizeKB": 7,
+      "width": 300,
+      "height": 153
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 7,
+      "width": 300,
+      "height": 153
+    },
+    {
+      "format": "png",
+      "sizeKB": 27,
+      "width": 300,
+      "height": 153
+    },
+    {
+      "format": "webp",
+      "sizeKB": 5,
+      "width": 250,
+      "height": 127
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 6,
+      "width": 250,
+      "height": 127
+    },
+    {
+      "format": "png",
+      "sizeKB": 20,
+      "width": 250,
+      "height": 127
+    },
+    {
+      "format": "webp",
+      "sizeKB": 4,
+      "width": 200,
+      "height": 102
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 4,
+      "width": 200,
+      "height": 102
+    },
+    {
+      "format": "png",
+      "sizeKB": 14,
+      "width": 200,
+      "height": 102
+    },
+    {
+      "format": "webp",
+      "sizeKB": 3,
+      "width": 150,
+      "height": 76
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 3,
+      "width": 150,
+      "height": 76
+    },
+    {
+      "format": "png",
+      "sizeKB": 9,
+      "width": 150,
+      "height": 76
+    },
+    {
+      "format": "webp",
+      "sizeKB": 2,
+      "width": 100,
+      "height": 51
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 2,
+      "width": 100,
+      "height": 51
+    },
+    {
+      "format": "png",
+      "sizeKB": 5,
+      "width": 100,
+      "height": 51
+    },
+    {
+      "format": "webp",
+      "sizeKB": 1,
+      "width": 50,
+      "height": 25
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 1,
+      "width": 50,
+      "height": 25
+    },
+    {
+      "format": "png",
+      "sizeKB": 3,
+      "width": 50,
+      "height": 25
+    },
+    {
+      "format": "webp",
+      "sizeKB": 1,
+      "width": 25,
+      "height": 13
+    },
+    {
+      "format": "jpg",
+      "sizeKB": 1,
+      "width": 25,
+      "height": 13
+    },
+    {
+      "format": "png",
+      "sizeKB": 2,
+      "width": 25,
+      "height": 13
+    }
+  ]
 }

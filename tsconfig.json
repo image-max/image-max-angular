@@ -2,27 +2,27 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-      "baseUrl": "./",
-      "forceConsistentCasingInFileNames": true,
-      "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true,
-      "sourceMap": true,
-      "declaration": false,
-      "downlevelIteration": true,
-      "experimentalDecorators": true,
-      "importHelpers": true,
-      "target": "ES2022",
-      "module": "es2020",
-      "resolveJsonModule": true,
-      "moduleResolution": "node",
-      "allowSyntheticDefaultImports": true,
-      "emitDecoratorMetadata": true,
-      "lib": ["es2022", "dom"],
-      "useDefineForClassFields": false
+    "baseUrl": "./",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "es2020",
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["es2022", "dom"],
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
-      "strictInjectionParameters": false,
-      "strictInputAccessModifiers": false,
-      "strictTemplates": false
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false
   }
 }

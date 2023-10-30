@@ -1,11 +1,5 @@
-<div [ngClass]="{'background':!selectedImage}">
-    <img [src]="imageUrl" [ngStyle]="style" [ngClass]="class" [class]="ngClass">
+<div class="wrapper" [ngClass]="{ background: !selectedImage }">
+  <img #img [src]="imageUrl" [ngStyle]="style" [ngClass]="class" [class]="ngClass" />
 
-
-    <div *ngIf="debug">
-        <p>loaded image path:{{imageUrl}}</p>
-        <p>loaded image size:{{selectedImage?.sizeKB}}</p>
-        <p>loaded image file type:{{selectedImage?.format}}</p>
-        <p>loaded image aspect ratio:{{imageData?.aspectRatio}}</p>
-    </div>
+  <div *ngIf="debug" class="debug">path: {{ imageUrl }} | size: {{ selectedImage?.sizeKB }} | type: {{ selectedImage?.format }} | AR: {{ imageData?.aspectRatio }}</div>
 </div>
