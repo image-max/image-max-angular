@@ -1,1 +1,5 @@
-<p>image max works!</p>
+<div class="wrapper" [ngClass]="{ background: !selectedImage }">
+  <img #img [src]="imageUrl" [ngStyle]="style" [ngClass]="class" [class]="ngClass" />
+
+  <div *ngIf="debug" class="debug">path: {{ imageUrl }} | size: {{ selectedImage?.sizeKB }} | type: {{ selectedImage?.format }} | AR: {{ imageData?.aspectRatio }}</div>
+</div>

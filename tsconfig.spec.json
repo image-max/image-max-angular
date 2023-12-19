@@ -1,16 +1,11 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-        "outDir": "./out-tsc/app",
-        "experimentalDecorators": true,
-    },
-    "files": ["src/main.ts", "src/polyfills.ts"],
-    "include": ["./**/*.d.ts", "./**/*.spec.ts"],
-    "exclude": [
-        "./**/*ARCHIVE*/**",
-        "./**/*.ts",
-        "./test.ts",
-        "node_modules"
-    ]
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "experimentalDecorators": true
+  },
+  "files": ["src/main.ts", "src/polyfills.ts"],
+  "include": ["./**/*.d.ts", "./**/*.spec.ts"],
+  "exclude": ["./**/*ARCHIVE*/**", "./**/*.ts", "./test.ts", "node_modules"]
 }
